@@ -5,29 +5,36 @@ import './App.css'
 import Footer from './componentes/footer/Footer'
 import Olograma from './componentes/ologramas/Ologramas'
 import "./App.css"
-import Contador from "./componentes/itemcount/ItemCount"
 import ItemListContainer from './containers/Itemlistcontainer/ItemsListContainer';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer';
+
+
+
 
 
  const App = ()=> {
 
   return (
-    <div>
+    <BrowserRouter>
         <NavBar />
-        <Slider />
-        <Olograma />
-        {/* <div className="container text-center ">
-          <button className="centrar" onClick={cambiarTitulo}>Cambiar Titulo</button>
-        </div> */}
-        <Contador 
-        initialValue={1}
-        stock={10}
-        />
-        <ItemListContainer />
+        <Switch>
+          <Route exact path={`/`}>
+            <Slider />
+            <Olograma />
+            {/* <div className="container text-center ">
+              <button className="centrar" onClick={cambiarTitulo}>Cambiar Titulo</button>
+            </div> */}
+            <ItemListContainer />
+          </Route> 
+          <Route exact path={`/detail/:id`}>
+            <ItemDetailContainer/>
+          </Route>
+        </Switch>
         <Footer 
         titulo="Un diseño distinto..."
         subtitulo="Un salto hacia el futuro..."/>
-    </div>
+    </BrowserRouter>
   )
  }
 export default App;

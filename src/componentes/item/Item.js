@@ -1,8 +1,10 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
+import {Link} from "react-router-dom"
 
 const Item = ({item}) => {
+    console.log(item)
     return(
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={item.img} />
@@ -14,9 +16,12 @@ const Item = ({item}) => {
                 <Card.Text>
                 {item.precio}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to={`/detail/${item.id}`}>
+                    <Button variant="primary">Go somewhere</Button>
+                </Link>
+                
             </Card.Body>
-    </Card>
+        </Card>
     )
 }
 export default Item;

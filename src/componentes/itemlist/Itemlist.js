@@ -1,15 +1,16 @@
 import Item from "../item/Item"
-import CardDeck from "react-bootstrap/CardDeck"
+//import CardDeck from "react-bootstrap/CardDeck"
 
-const ItemList = (items)=> {
+const ItemList = ({items})=> {
+    
     return(
-        <CardDeck>
+        <div>
             {
                 items.map((item, index) => {
                     return <Item item={item} key={index}/>
                 })
             }
-        </CardDeck>
+        </div>
     )
 }
 export default ItemList;
