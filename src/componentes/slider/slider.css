@@ -1,0 +1,14 @@
+.text.cyan {
+    color:cyan;
+}
+.slider {
+   /* height: 960px;*/
+   margin-top: 100px;
+}
+.Presentacion {
+    background-color: #282c34;
+    color: cyan;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
