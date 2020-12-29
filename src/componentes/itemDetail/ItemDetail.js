@@ -6,7 +6,7 @@ const ItemDetail = ({producto})=> {
     const onAddItem = (contador)=> {
         setCantidad (contador)
     }
-
+    console.log(producto)
     return (
         <>
             <div>

@@ -8,25 +8,22 @@ const ItemDetailContainer = ()=> {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
     const {id} = useParams ()
+    console.log(producto)
 
-    useEffect(() => {
-        setLoading (true)
-        setTimeout(() => {
-            getProductById(id).then((response) => {
-                    response?.forEach((productos) => {
-                        if(productos.id == Number(id)) {
-                            setProducto(productos) 
-                        }
-                    });
-                    setLoading(false)
-                });
+    useEffect(()=>{
+        setLoading(true);
+        setTimeout(()=>{
+            getProductById(Number(id)).then((response)=>{ 
                 
+                setProducto(response)
+                setLoading(false)
+            })
         }, 3000)
-        
     }, [id])
+    
 
     return (
-        <div>
+        <div className="mt-5">
             {
                 loading ? (<h1>Cargando...</h1>) : (<ItemDetail producto={producto}/>)
             }
