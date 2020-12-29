@@ -13,14 +13,16 @@ const ItemDetailContainer = ()=> {
         setLoading (true)
         setTimeout(() => {
             getProductById(id).then((response) => {
-                    response.forEach((productos) => {
+                    response?.forEach((productos) => {
                         if(productos.id == Number(id)) {
                             setProducto(productos) 
                         }
                     });
                     setLoading(false)
                 });
+                
         }, 3000)
+        
     }, [id])
 
     return (
