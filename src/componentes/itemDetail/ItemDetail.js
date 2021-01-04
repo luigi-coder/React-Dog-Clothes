@@ -1,17 +1,20 @@
 import React, { useState } from "react"
 import ItemCount from "../itemcount/ItemCount"
+import Button from "../button/Button"
 
 const ItemDetail = ({producto})=> {
     const [cantidad, setCantidad] = useState(1)
     const onAddItem = (contador)=> {
         setCantidad (contador)
     }
-    console.log(producto)
+    const addToCart = ()=> {
+        alert(`Agregaste ${cantidad} ${producto.nombre}`)
+    }
     return (
         <>
             <div>
                 <div>
-                    <img src={producto.img}></img>
+                    <img src={producto.img} alt="imagen de bici"></img>
                 </div>
                 <div>
                     <h3>{producto.nombre}</h3>
@@ -23,7 +26,9 @@ const ItemDetail = ({producto})=> {
                     stock={producto.stock}
                     onAdd={onAddItem}/>
                 </div>
-                
+                <Button 
+                contenido={"Comprar"}
+                callback={addToCart}/>
             </div>
         </>
     )
