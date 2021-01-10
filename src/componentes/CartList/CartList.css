@@ -1,0 +1,22 @@
+#cartTitles {
+    display:flex;
+    justify-content: space-around;
+}
+#cartProducts {
+    display:flex;
+    justify-content: space-around;
+}
+#cartTotal {
+    text-align: end;
+    margin-top: 50px;
+    margin-right: 180px;
+}
+#iconTrash {
+    cursor: pointer;
+}
+#iconTrash:hover {
+    color: red;
+}
+#cart {
+    color:white;
+}

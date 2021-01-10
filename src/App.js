@@ -8,33 +8,38 @@ import "./App.css"
 import ItemListContainer from './containers/Itemlistcontainer/ItemsListContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer';
-
-
+import { CartProvider } from './context/CartContext';
+import CartContainer from './containers/CartContainer/CartContainer';
 
 
 
  const App = ()=> {
 
   return (
-    <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path={`/`}>
-            <Slider />
-            <Olograma />
-            {/* <div className="container text-center ">
-              <button className="centrar" onClick={cambiarTitulo}>Cambiar Titulo</button>
-            </div> */}
-            <ItemListContainer />
-          </Route> 
-          <Route exact path={`/detail/:id`}>
-            <ItemDetailContainer/>
-          </Route>
-        </Switch>
-        <Footer 
-        titulo="Un diseño distinto..."
-        subtitulo="Un salto hacia el futuro..."/>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+          <NavBar />
+          <Switch>
+            <Route exact path={`/`}>
+              <Slider />
+              <Olograma />
+              {/* <div className="container text-center ">
+                <button className="centrar" onClick={cambiarTitulo}>Cambiar Titulo</button>
+              </div> */}
+              <ItemListContainer />
+            </Route> 
+            <Route exact path={`/detail/:id`}>
+              <ItemDetailContainer/>
+            </Route>
+            <Route exact path={`/cart`}>
+              <CartContainer/>
+            </Route>
+          </Switch>
+          <Footer 
+          titulo="Un diseño distinto..."
+          subtitulo="Un salto hacia el futuro..."/>
+      </BrowserRouter>
+    </CartProvider>
   )
  }
 export default App;

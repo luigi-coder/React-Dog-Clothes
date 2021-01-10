@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 //import NavDropdown from "react-bootstrap/NavDropdown";
 import "./navbar.css";
-import Icons from "../cart/Cart";
+import Cart from "../cart/Cart";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebook} from '@fortawesome/free-brands-svg-icons';
 import {faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
@@ -30,7 +30,7 @@ const NavBar = () => {
           <Nav.Link className="text-cyan " href="#">
           <FontAwesomeIcon icon={faLinkedin} className="instagram"/>
           </Nav.Link>
-          <Nav.Link className="text-cyan " href="#"><Icons/></Nav.Link>
+          <Nav.Link className="text-cyan " href="#"><Cart/></Nav.Link>
          
         </Nav>
       </Navbar.Collapse>
