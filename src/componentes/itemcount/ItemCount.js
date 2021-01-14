@@ -27,11 +27,11 @@ const ItemCount = ({initialValue, stock, onAdd})=> {
 
     return (
         <div>
-            <h3 class="text-cyan" style={{textAlign:'center'}}>cantidad de click : {contador}</h3>
+            <h3 class="text-cyan" style={{textAlign:'center'}}>Cantidad: {contador}</h3>
             <div className="container text-center mt-5">
-                <button className="bg-danger" onClick={aumentarContador}>Aumentar Contador</button>
+                <button className="btn btn-info mr-2" onClick={aumentarContador}>+</button>
                 {/* <button className="bg-success" onClick={resetearContador}>Resetear Contador</button> */}
-                <button className="bg-warning" onClick={disminuirContador}>Disminuir Contador</button>
+                <button className="btn btn-info mr-2" onClick={disminuirContador}>-</button>
             </div>
         </div>
     )

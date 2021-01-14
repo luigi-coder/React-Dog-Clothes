@@ -18,3 +18,23 @@
     font-size: 1.5em;
     text-align: center;
 }
+.text-home {
+    color:cyan;
+    transition: 1s all;
+}
+.text-home:hover {
+    font-size: 1.7em;
+    text-decoration: none;
+    color:cyan;
+}
+.text-logo {
+    color:cyan;
+    transition: 1s all;
+    width: 200px;
+    font-size: 1.7em;
+}
+.text-logo:hover {
+    font-size: 2em;
+    text-decoration: none;
+    color:cyan;
+}

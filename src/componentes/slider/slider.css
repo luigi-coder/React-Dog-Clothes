@@ -2,8 +2,24 @@
     color:cyan;
 }
 .slider {
-   /* height: 960px;*/
-   margin-top: 100px;
+   height: 970px;
+}
+@media (max-width: 1024px) {
+    .slider {
+        margin-top:60px;
+        height: 600px;
+    }
+}
+@media (max-width:768px) {
+    .slider {
+        margin-top:100px;
+        height: 400px;
+    }
+}
+@media (max-width:414px) {
+    .slider {
+        height: 265px;
+    }
 }
 .Presentacion {
     background-color: #282c34;

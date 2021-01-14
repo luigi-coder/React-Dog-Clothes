@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useEffect}  from 'react';
 import NavBar from "./componentes/navbar/Navbar";
 import Slider from './componentes/slider/Slider';
 import './App.css'
@@ -11,10 +11,45 @@ import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailCont
 import { CartProvider } from './context/CartContext';
 import CartContainer from './containers/CartContainer/CartContainer';
 
+import {getFirestore} from "./firebase"
 
 
- const App = ()=> {
 
+ const App = ()=> { 
+
+
+    useEffect(()=> {
+
+      const db = getFirestore() // referencia base de datos 
+      const itemsCollection = db.collection("items") // referencia de collecion
+      /* const query = itemsCollection.where("categoriaId", "!=", "ropa") 
+      query.get()
+      .then((resultado) => {
+        resultado.docs.forEach((doc) => {
+          console.log(doc.id)
+          console.log(doc.data())
+        })
+
+      })
+      .catch((err) => {
+        console.log(err)
+      }) */// por un solo filtro 
+      const query = itemsCollection.get() //get() me trae todo en bruto
+
+      query
+      .then((resultado) => {
+        resultado.docs.forEach((doc) => {
+          console.log(doc.id)
+          console.log(doc.data())
+        })
+
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+      
+
+    })
   return (
     <CartProvider>
       <BrowserRouter>
@@ -22,7 +57,7 @@ import CartContainer from './containers/CartContainer/CartContainer';
           <Switch>
             <Route exact path={`/`}>
               <Slider />
-              <Olograma />
+              <Olograma/>
               {/* <div className="container text-center ">
                 <button className="centrar" onClick={cambiarTitulo}>Cambiar Titulo</button>
               </div> */}

@@ -15,11 +15,11 @@ const ItemDetail = ({producto})=> {
     }
     return (
         <>
-            <div>
-                <div>
-                    <img src={producto.img} alt="imagen de bici"></img>
+            <div class="row">
+                <div class="text-center col-md-6 mt-5">
+                    <img src={producto.img} alt="imagen de un perro vestido"></img>
                 </div>
-                <div>
+                <div class="text-center col-md-6 mt-5">
                     <h3>{producto.nombre}</h3>
                     <h3>{producto.descripcion}</h3>
                     <h3>{producto.precio}</h3>
@@ -28,10 +28,15 @@ const ItemDetail = ({producto})=> {
                     initialValue={1}
                     stock={producto.stock}
                     onAdd={onAddItem}/>
+                    <div class="mt-5">
+                        <Button
+                        contenido={"Comprar"}
+                        callback={addToCart}/>
+                        <Button
+                        contenido={`Seguir Comprando`}
+                        path={"/"}/>
+                    </div>
                 </div>
-                <Button 
-                contenido={"Comprar"}
-                callback={addToCart}/>
             </div>
         </>
     )

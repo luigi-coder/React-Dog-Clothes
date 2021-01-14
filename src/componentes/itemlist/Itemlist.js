@@ -4,12 +4,15 @@ import Item from "../item/Item"
 const ItemList = ({items})=> {
     
     return(
-        <div>
-            {
-                items.map((item, index) => {
-                    return <Item item={item} key={index}/>
-                })
-            }
+        <div className="container mb-5 text-center">
+        
+            <div className="row">
+                {
+                    items.map((item, index) => {
+                        return <Item item={item} key={index}/>
+                    })
+                }
+            </div>
         </div>
     )
 }

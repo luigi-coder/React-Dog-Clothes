@@ -8,31 +8,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebook} from '@fortawesome/free-brands-svg-icons';
 import {faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {NavLink} from "react-router-dom"
+
+
 
 
 const NavBar = () => {
   return (
-    <Navbar className="nav fixed-top bg-cyan" expand="lg" >
-      <Navbar.Brand className="text-cyan" href="#">LS Diseño Web</Navbar.Brand>
-      
+    <Navbar className="nav fixed-top" expand="lg">
+
+      <NavLink to="/" className="text-logo">Dog Clothes</NavLink>
+  
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse className="bg-cyan" id="basic-navbar-nav">
-        <Nav className="ml-auto text-center">
-          <Nav.Link className="text-cyan " href="#">Home</Nav.Link>
-          <Nav.Link className="text-cyan " href="#">Contacto</Nav.Link>
-          <Nav.Link className="text-cyan " href="#">Producto</Nav.Link>
-          <Nav.Link className="text-cyan " href="#">
-          <FontAwesomeIcon icon={faFacebook} className="facebook"/>
-          </Nav.Link>
-          <Nav.Link className="text-cyan " href="#">
-          <FontAwesomeIcon icon={faInstagramSquare} className="instagram"/>
-          </Nav.Link>
-          <Nav.Link className="text-cyan " href="#">
-          <FontAwesomeIcon icon={faLinkedin} className="instagram"/>
-          </Nav.Link>
-          <Nav.Link className="text-cyan " href="#"><Cart/></Nav.Link>
-         
-        </Nav>
+        <Navbar.Collapse className="bg-cyan" id="basic-navbar-nav">
+          <Nav className="ml-auto text-center">
+            <Nav.Link className="text-cyan " href="#">
+              <NavLink className="text-home" to="/">Home</NavLink>
+            </Nav.Link>
+            <Nav.Link className="text-cyan " href="#">
+              <NavLink className="text-home" to="/">Ropa</NavLink>
+            </Nav.Link>
+            <Nav.Link className="text-cyan " href="#">
+              <NavLink className="text-home" to="/">Accesorios</NavLink>
+            </Nav.Link>
+            <Nav.Link className="text-cyan " href="#">
+              <FontAwesomeIcon icon={faFacebook} className="facebook"/>
+            </Nav.Link>
+            <Nav.Link className="text-cyan " href="#">
+              <FontAwesomeIcon icon={faInstagramSquare} className="instagram"/>
+            </Nav.Link>
+            <Nav.Link className="text-cyan " href="#">
+              <FontAwesomeIcon icon={faLinkedin} className="instagram"/>
+            </Nav.Link>
+            <Nav.Link className="text-cyan " href="#"><Cart/></Nav.Link>
+          </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
