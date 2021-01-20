@@ -13,7 +13,7 @@ const Item = ({item}) => {
                         <Card.Text style={{ width: '13rem'}}>
                             {item.descripcion}
                         </Card.Text>
-                        <Button 
+                        <Button
                         contenido={`detalles`}
                         path={`/detail/${item.id}`
                         }/>
