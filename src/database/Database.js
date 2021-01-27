@@ -1,4 +1,67 @@
-const productos = [
+import {getFirestore} from "../firebase/firebase"
+
+export function getProducts() {
+    return new Promise((resolve, reject) => {
+      const query = getFirestore().collection("items").limit(12);
+      // Pedimos los datos
+      query.get().then((response) => {
+        if (response.size === 0) reject("Empty");
+        const data = response.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        resolve(data);
+      });
+    });
+}
+
+export function getProductsById(id) {
+    return new Promise((resolve, reject) => {
+      const query = getFirestore().collection("items").doc(id);
+      // Pedimos los datos
+      query.get().then((response) => {
+        if (response.size === 0) reject("Empty");
+        const data = { ...response.data(), id: response.id };
+        resolve(data);
+      });
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const productos = [
     {
         nombre:"Dog Underwear",
         categorias:"ropa",
@@ -88,3 +151,4 @@ export const getProductById = (id)=> {
     })
 }
 
+ */

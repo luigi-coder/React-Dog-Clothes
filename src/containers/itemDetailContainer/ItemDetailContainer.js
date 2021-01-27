@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getProductById } from "../../database/Database"
+import { getProductsById } from "../../database/Database"
 import ItemDetail from "../../componentes/itemDetail/ItemDetail"
 
 const ItemDetailContainer = ()=> {
@@ -13,7 +13,7 @@ const ItemDetailContainer = ()=> {
     useEffect(()=>{
         setLoading(true);
         setTimeout(()=>{
-            getProductById(Number(id)).then((response)=>{ 
+            getProductsById(id).then((response)=>{ 
                 
                 setProducto(response)
                 setLoading(false)

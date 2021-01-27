@@ -34,6 +34,8 @@ const CartList = ()=> {
                 <div id="cartTotal">
                     <h4>Subtotal</h4>
                     <h4>${getGrandTotal()}</h4>
+                    <Button contenido = {"Checkout"}
+                    path = {"/checkout"}/>
                 </div>
             </div>
         </>
