@@ -18,7 +18,7 @@ const ItemDetailContainer = ()=> {
                 setProducto(response)
                 setLoading(false)
             })
-        }, 3000)
+        }, 1000)
     }, [id])
     
 

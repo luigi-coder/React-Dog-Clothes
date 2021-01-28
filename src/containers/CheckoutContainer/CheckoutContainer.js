@@ -39,7 +39,7 @@ const CheckoutContainer = ()=> {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'Compra Finalizada, pronto te llegara confirmación',
+                title: `Compra Finalizada, pronto te llegara confirmación, ${orderId}`,
                 showConfirmButton: false,
                 timer: 1500
               })

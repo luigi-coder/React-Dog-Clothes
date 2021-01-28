@@ -18,7 +18,7 @@ export default function CategoriesDetailContainer() {
 
   return (
     <div className="category ">
-      <h1>Hola Luis aca mete codigo para mostrar las categorias</h1>
+      <h1>Codigo para mostrar las categorias</h1>
       <CategoryDetail products={products} categoriaId={categoriaId} />
     </div>
   );
