@@ -1,31 +1,48 @@
-import {getFirestore} from "../firebase/firebase"
+import { getFirestore } from "../firebase/firebase";
 
 export function getProducts() {
-    return new Promise((resolve, reject) => {
-      const query = getFirestore().collection("items").limit(12);
-      // Pedimos los datos
-      query.get().then((response) => {
-        if (response.size === 0) reject("Empty");
-        const data = response.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        resolve(data);
-      });
+  return new Promise((resolve, reject) => {
+    const query = getFirestore().collection("items").limit(12);
+    // Pedimos los datos
+    query.get().then((response) => {
+      if (response.size === 0) reject("Empty");
+      const data = response.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      resolve(data);
     });
+  });
 }
 
 export function getProductsById(id) {
-    return new Promise((resolve, reject) => {
-      const query = getFirestore().collection("items").doc(id);
-      // Pedimos los datos
-      query.get().then((response) => {
-        if (response.size === 0) reject("Empty");
-        const data = { ...response.data(), id: response.id };
-        resolve(data);
-      });
+  return new Promise((resolve, reject) => {
+    const query = getFirestore().collection("items").doc(id);
+    // Pedimos los datos
+    query.get().then((response) => {
+      if (response.size === 0) reject("Empty");
+      const data = { ...response.data(), id: response.id };
+      resolve(data);
     });
-  }
+  });
+}
+
+export default function getProductsByCategory(categoriaId) {
+  return new Promise((resolve, reject) => {
+    const query = getFirestore()
+      .collection("items")
+      .where("categoriaId", "==", `${categoriaId}`);
+    // Pedimos los datos
+    query.get().then((response) => {
+      if (response.size === 0) reject("Empty");
+      const data = response.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      resolve(data);
+    });
+  });
+}
 
 
 
@@ -121,7 +138,8 @@ export function getProductsById(id) {
         categorias:"Accesorios",
         img:"https://i.ibb.co/HzcjTX9/trabajo.jpg",
         id: 1993,
-        descripcion:"Coleccion de correras y collares de cuero, diseñados con énfasis en el uso práctico mientras se trabaja con perros. Apreciarás el material de cuero natural de calidad, la simplicidad y durabilidad.",
+        descripcion:"Coleccion de correras y collares de cuero, diseñados con énfasis en el uso práctico mientras 
+        se trabaja con perros. Apreciarás el material de cuero natural de calidad, la simplicidad y durabilidad.",
         precio: 29,
         stock: 52
     },
@@ -130,7 +148,8 @@ export function getProductsById(id) {
         categorias:"Accesorios",
         img:"https://i.ibb.co/1M7XgzP/suave.jpg",
         id: 1993,
-        descripcion:"Collares prácticos y adecuados para el uso diario. Reforzados por una correa doble de nylon y anillos en D solidos para que los collares pueden resistir un gran tirón.",
+        descripcion:"Collares prácticos y adecuados para el uso diario. Reforzados por una correa doble de nylon y anillos en D solidos
+         para que los collares pueden resistir un gran tirón.",
         precio: 29,
         stock: 52
     }
