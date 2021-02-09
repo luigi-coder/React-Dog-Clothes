@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./componentes/navbar/Navbar";
 import Slider from "./componentes/slider/Slider";
 import "./App.css";
@@ -14,10 +14,12 @@ import CheckoutContainer from "./containers/CheckoutContainer/CheckoutContainer"
 import CategoryDetailContainer from "./containers/CategoryDetailContainer/CategoryDetailContainer";
 
 const App = () => {
+  const [filter, setFilter] = useState("");
+
   return (
     <CartProvider>
       <BrowserRouter>
-        <NavBar />
+        <NavBar setFilter={setFilter} />
         <Switch>
           <Route exact path={`/`}>
             <Slider />
@@ -25,7 +27,7 @@ const App = () => {
             {/* <div className="container text-center ">
                 <button className="centrar" onClick={cambiarTitulo}>Cambiar Titulo</button>
               </div> */}
-            <ItemListContainer />
+            <ItemListContainer filter={filter} />
           </Route>
           <Route exact path={`/detail/:id`}>
             <ItemDetailContainer />
@@ -50,5 +52,3 @@ const App = () => {
   );
 };
 export default App;
-
-
