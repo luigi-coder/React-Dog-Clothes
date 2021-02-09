@@ -45,7 +45,7 @@ const App = () => {
         </Switch>
         <Footer
           titulo="Un diseño distinto..."
-          subtitulo="Un salto hacia el futuro..."
+          
         />
       </BrowserRouter>
     </CartProvider>

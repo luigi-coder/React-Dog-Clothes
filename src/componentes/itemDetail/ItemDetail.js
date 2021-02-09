@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import ItemCount from "../itemcount/ItemCount"
 import Button from "../button/Button"
 import useCartContext from "../../context/CartContext"
+import "./itemDetail.css"
 
 
 const ItemDetail = ({producto})=> {
@@ -15,15 +16,16 @@ const ItemDetail = ({producto})=> {
     }
     return (
         <>
-            <div class="row">
-                <div class="text-center col-md-6 mt-5">
+            <div class="container-fluid">
+            <div class="row itemDetail">
+                <div class="text-center col-md-6">
                     <img src={producto.img} alt="imagen de un perro vestido"></img>
                 </div>
-                <div class="text-center col-md-6 mt-5">
-                    <h3>{producto.nombre}</h3>
+                <div class="text-center col-md-6 mt-5 text-light">
+                    <h3 class="itemDetailNombre">{producto.nombre}</h3>
                     <h3>{producto.descripcion}</h3>
-                    <h3>{producto.precio}</h3>
-                    <h3>{producto.stock}</h3>
+                    <h3 class="itemDetailPrecio">{producto.precio} $ARS</h3>
+                    <h3 class="itemDetailStock">{producto.stock} Stock</h3>
                     <ItemCount 
                     initialValue={1}
                     stock={producto.stock}
@@ -37,6 +39,7 @@ const ItemDetail = ({producto})=> {
                         path={"/"}/>
                     </div>
                 </div>
+            </div>
             </div>
         </>
     )

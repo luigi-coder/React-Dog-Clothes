@@ -8,8 +8,9 @@
 }
 #cartTotal {
     text-align: end;
-    margin-top: 50px;
+    margin-top: 250px;
     margin-right: 180px;
+    font-size: 1.5rem;
 }
 #iconTrash {
     cursor: pointer;
@@ -19,4 +20,6 @@
 }
 #cart {
     color:white;
+    margin-top:100px;
+    margin-bottom: 55px;
 }

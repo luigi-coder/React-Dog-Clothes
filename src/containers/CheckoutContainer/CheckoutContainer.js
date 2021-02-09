@@ -59,7 +59,7 @@ const CheckoutContainer = () => {
 
   return (
     <>
-      <Container id="checkcontainer">
+      <Container id="checkcontainer" class="container">
         <h2>Checkout</h2>
         <Form>
           <Form.Row>
@@ -124,7 +124,7 @@ const CheckoutContainer = () => {
           <h4>Total</h4>
           <h4>${getGrandTotal()}</h4>
         </div>
-        <div id={"checkoutButton"}>
+        <div id={"checkoutButton"} class="mb-5">
           <Button contenido={"Finalizar Compra"} callback={() => Compra()} />
         </div>
       </Container>

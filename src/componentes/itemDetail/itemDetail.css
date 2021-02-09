@@ -1,0 +1,15 @@
+.itemDetail {
+    margin-top:200px;
+    margin-bottom: 200px;
+}
+.itemDetailNombre {
+    color:cyan;
+    font-size: 3rem;
+}
+.itemDetailPrecio {
+    color:cyan;
+    margin-top:50px
+}
+.itemDetailStock {
+    color:cyan;
+}
